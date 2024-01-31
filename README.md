@@ -1,2 +1,2 @@
 # AthleteKit
-Mobile Application for training
+Application for training
