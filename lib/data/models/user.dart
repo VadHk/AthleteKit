@@ -7,6 +7,7 @@ class User {
   final String lastName;
   final DateTime birthday;
   final double weight;
+  final double height;
 
   User({
     required this.email,
@@ -14,6 +15,7 @@ class User {
     required this.lastName,
     required this.birthday,
     required this.weight,
+    required this.height,
   });
 
   String get fullName => '$firstName $lastName';
@@ -25,7 +27,8 @@ class User {
         firstName = json['firstName'] as String,
         lastName = json['lastName'] as String,
         birthday = json['birthday'] as DateTime,
-        weight = json['weight'] as double;
+        weight = json['weight'] as double,
+        height = json['height'] as double;
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -34,10 +37,10 @@ class User {
         'lastName': lastName,
         'bornDate': birthday,
         'weight': weight,
+        'height': height,
       };
 
   @override
-  String toString() {
-    return 'User{id: $id, email: $email, firstName: $firstName, lastName: $lastName, birthday: $birthday, weight: $weight}';
-  }
+  String toString() =>
+      'User{id: $id, email: $email, firstName: $firstName, lastName: $lastName, birthday: $birthday, weight: $weight, height: $height}';
 }
