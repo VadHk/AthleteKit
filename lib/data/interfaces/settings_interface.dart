@@ -1,9 +1,10 @@
 import 'package:athletekit/data/enums/enums.dart';
+import 'package:flutter/material.dart';
 
 abstract class SettingsInterface {
-  late AppTheme theme;
+  late Brightness theme;
   late AppLanguage lang;
 
-  void switchTheme(AppTheme theme);
+  void switchTheme(Brightness theme);
   void switchLang(AppLanguage lang);
 }
