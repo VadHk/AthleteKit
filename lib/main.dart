@@ -1,5 +1,16 @@
+import 'package:athletekit/data/args/const.dart';
+import 'package:athletekit/data/args/enums.dart';
+import 'package:athletekit/generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:athletekit/src/styles/app_theme.dart';
 import 'package:athletekit/src/views/home_page.dart';
 import 'package:flutter/material.dart';
+
+// final stringProvider = Provider((ref) => 'Riverpod in progress!!!');
+
+// TODO: Add Routing
+// TODO: Add Riverpod logic
+// TODO: Add Login & check authorization
 
 void main() {
   runApp(const App());
@@ -8,31 +19,24 @@ void main() {
 class App extends StatelessWidget {
   const App({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // var locale = S.of(context);
+
     return MaterialApp(
-      title: 'AthletKit',
+      locale: AppLanguage.en.value,
+      supportedLocales: locales,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      title: 'AthleteKit',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // TRY THIS: Try running your application with "flutter run". You'll see
-          // the application has a purple toolbar. Then, without quitting the app,
-          // try changing the seedColor in the colorScheme below to Colors.green
-          // and then invoke "hot reload" (save your changes or press the "hot
-          // reload" button in a Flutter-supported IDE, or press "r" if you used
-          // the command line to start the app).
-          //
-          // Notice that the counter didn't reset back to zero; the application
-          // state is not lost during the reload. To reset the state, use hot
-          // restart instead.
-          //
-          // This works for code too, not just values: Most code changes can be
-          // tested with just a hot reload.
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-          useMaterial3: true),
-      home: const HomePage(title: 'AthleteKit'),
+      theme: appTheme(Brightness.light),
+      darkTheme: appTheme(Brightness.dark),
+      home: const HomePage(),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:athletekit/utils/tools.dart';
 
 class User {
-  late int? id;
+  late int? _id;
+  late String? _token;
   final String email;
   final String firstName;
   final String lastName;
@@ -18,11 +19,22 @@ class User {
     required this.height,
   });
 
+  int? get id => _id;
+  String? get token => _token;
   String get fullName => '$firstName $lastName';
   int get age => Tools.ageCalculate(birthday);
 
+  set setId(int id) {
+    _id = id;
+  }
+
+  set setToken(String token) {
+    _token = token;
+  }
+
   User.fromJson(Map<String, dynamic> json)
-      : id = json['id'] as int,
+      : _id = json['id'] as int,
+        _token = json['json'] as String,
         email = json['email'] as String,
         firstName = json['firstName'] as String,
         lastName = json['lastName'] as String,
@@ -32,6 +44,7 @@ class User {
 
   Map<String, dynamic> toJson() => {
         'id': id,
+        'token': token,
         'email': email,
         'firstName': firstName,
         'lastName': lastName,
