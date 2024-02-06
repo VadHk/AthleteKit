@@ -1,4 +1,4 @@
-import 'package:athletekit/data/enums/enums.dart';
+import 'package:athletekit/data/args/enums.dart';
 import 'package:athletekit/data/interfaces/settings_interface.dart';
 import 'package:flutter/material.dart';
 
