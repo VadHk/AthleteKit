@@ -1,5 +1,5 @@
-import 'package:athletekit/data/args/const.dart';
-import 'package:athletekit/data/args/enums.dart';
+import 'package:athletekit/data/library/const.dart';
+import 'package:athletekit/data/library/enums.dart';
 import 'package:athletekit/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:athletekit/src/styles/app_theme.dart';
@@ -21,9 +21,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var locale = S.of(context);
-
     return MaterialApp(
+      showPerformanceOverlay: false,
       locale: AppLanguage.en.value,
       supportedLocales: locales,
       localizationsDelegates: const [
@@ -32,7 +31,7 @@ class App extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      title: 'AthleteKit',
+      title: appName,
       debugShowCheckedModeBanner: false,
       theme: appTheme(Brightness.light),
       darkTheme: appTheme(Brightness.dark),
