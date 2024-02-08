@@ -1,10 +1,10 @@
-import 'package:athletekit/src/styles/app_colors.dart';
+import 'package:athletekit/src/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData appTheme(Brightness mode) => ThemeData(
       colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.accentGreen,
+        seedColor: Styles.colors.accentGreen,
         brightness: mode,
       ),
       textTheme: TextTheme(

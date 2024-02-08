@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `AthletKit`
+  /// `AthleteKit`
   String get appName {
     return Intl.message(
-      'AthletKit',
+      'AthleteKit',
       name: 'appName',
       desc: '',
       args: [],

@@ -1,4 +1,4 @@
-import 'package:athletekit/data/library/enums.dart';
+import 'package:athletekit/common/enums.dart';
 import 'package:flutter/material.dart';
 
 abstract class SettingsInterface {
