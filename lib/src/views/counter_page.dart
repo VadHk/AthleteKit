@@ -15,7 +15,7 @@ class CounterPage extends ConsumerWidget {
           context: context,
           builder: (context) => AlertDialog(
             title: const Text('Message'),
-            content: Text(ref.watch(counter).toString()),
+            content: Text(ref.watch(stateProviders.userProvider).toString()),
           ),
         );
       }
